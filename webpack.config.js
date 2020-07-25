@@ -39,5 +39,5 @@ module.exports = {
     hot: IS_DEV
   },
 
-  devtool: setupDevtool();
+  devtool: setupDevtool(),
 };
