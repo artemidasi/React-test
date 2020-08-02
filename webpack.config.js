@@ -1,5 +1,5 @@
-import serverConfig from "./cfg/webpack.server.config";
-import clientConfig from "./cfg/webpack.client.config";
+const serverConfig = require("./cfg/webpack.server.config");
+const clientConfig = require("./cfg/webpack.client.config");
 
 module.exports = [
   serverConfig,
