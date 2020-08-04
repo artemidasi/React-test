@@ -1,6 +1,6 @@
 const path = require("path");
-const {HotModuleReplacementPlugin} = require("webpack");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const { HotModuleReplacementPlugin } = require("webpack");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV === 'development';
@@ -32,10 +32,28 @@ module.exports = {
   },
 
   module: {
-    rules: [{
-      test: /\.[tj]sx?$/,
-      use: ["ts-loader"]
-    }],
+    rules: [
+      {
+        test: /\.[tj]sx?$/,
+        use: ["ts-loader"]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader', 
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              }
+            }
+          },
+          'less-loader',
+        ],
+      }
+    ],
   },
 
   devtool: setupDevtool(),
