@@ -52,9 +52,9 @@ type MyReadonly<T> = {
 // };
 
 //Делает ключи в объекте необязательными
-type MyPartial<T> = {
-  [N in keyof T]?: T[N];
-}
+// type MyPartial<T> = {
+//   [N in keyof T]?: T[N];
+// }
 
 type MyPick<T, K extends keyof T> = {
   [N in K]: T[N];
