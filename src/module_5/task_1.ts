@@ -4,3 +4,5 @@ function concat (firstWord: string, secondWord: string): string {
 
 let mytrem = concat("Привет", 'Мир');
 
+console.log(mytrem);
+

@@ -161,8 +161,8 @@ class MyComponent extends React.Component<{prop1: number}, {state1: string}> {
     }
   }
   public render() {
-    // return (
-    // <div>{this.props.prop1}</div>
-    // )
+    return (
+    <div>{this.props.prop1}</div>
+    )
   }
 }

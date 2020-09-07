@@ -11,4 +11,6 @@ interface MyArray<T> {
 }
 const initialValue = 0;
 
-const treo = myArray.reduce((accumulator, value) => accumulator + value, initialValue);
+const tetsValue = myArray.reduce((accumulator, value) => accumulator + value, initialValue);
+
+console.log(tetsValue);
