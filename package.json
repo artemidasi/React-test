@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build_dev": "env NODE_ENV=development webpack --config webpack.config.js",
-    "build_prod": "env NODE_ENV=production webpack --config webpack.config.js",
-    "dev":"env NODE_ENV=development webpack-dev-server",
+    "build_dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build_prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Xokage123/React-test#readme",
   "devDependencies": {
+    "@types/react": "^16.9.49",
     "html-webpack-plugin": "^4.3.0",
     "ts-loader": "^8.0.1",
     "typescript": "^3.9.7",

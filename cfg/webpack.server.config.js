@@ -1,6 +1,7 @@
 const path = require("path");
 //Убирает другие зависимости
 const nodeExternals = require("webpack-node-externals");
+const { triggerAsyncId } = require("async_hooks");
 
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -20,10 +21,28 @@ module.exports = {
   externals: [nodeExternals()],
 
   module: {
-    rules: [{
-      test: /\.[tj]sx?$/,
-      use: ["ts-loader"]
-    }],
+    rules: [
+      {
+        test: /\.[tj]sx?$/,
+        use: ["ts-loader"]
+      },
+
+      {
+        test: /\.less$/,
+        use: [ 
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+              // onlyLocals: true,
+            }
+          },
+        ],
+      }
+    ],
   },
 
   optimization: {
