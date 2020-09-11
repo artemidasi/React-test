@@ -1,8 +1,17 @@
-function concat (firstWord: string, secondWord: string): string {
-    return firstWord + secondWord;
+import jsConcat from './myJsLib.js';
+
+type ConcatFunction = (a: string, b: string) => string;
+
+const typeScriptConcat: ConcatFunction = jsConcat;
+
+typeScriptConcat ('Ghbdtn','Ghfbb');
+
+type TsConcatVarArg = (...arg: Array<string>) => string;
+
+const concat: TsConcatVarArg = (...args) => {
+    return args.join("");
 }
 
-let mytrem = concat("Привет", 'Мир');
+const str = concat('1','+','1');
 
-console.log(mytrem);
-
+console.log(str);
