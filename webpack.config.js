@@ -1,19 +1,19 @@
 const clientConfig = require("./cfg/webpack.client.config");
 const serverConfig = require("./cfg/webpack.server.config");
 
+const NODE_ENV = process.env.NODE_ENV;
+const IS_DEV = NODE_ENV === 'development';
+const IS_PROD = NODE_ENV === 'production';
+
 module.exports = [
     clientConfig,
     serverConfig,
 ]
 
-const NODE_ENV = process.env.NODE_ENV;
-const IS_DEV = NODE_ENV === 'development';
-const IS_PROD = NODE_ENV === 'production';
-
-function setupDevtool() {
-    if (IS_DEV) return 'eval';
-    if (IS_PROD) return false;
-}
+// function setupDevtool() {
+//     if (IS_DEV) return 'eval';
+//     if (IS_PROD) return false;
+// }
 
 // module.exports = {
 //     resolve: {
