@@ -10,7 +10,7 @@ function AppComponent() {
         <Layout>
           <Header />
           <Content>
-            content
+            Максим
           </Content>
         </Layout>
     );

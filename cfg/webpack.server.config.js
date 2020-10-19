@@ -30,15 +30,15 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [{
-                    loader: 'css-loader',
+                    loader: "css-loader",
                     options: {
                         modules: {
-                            mode: 'local',
-                            localIdentName: '[name]__[local]--[hash:base64:5]',
+                            mode: "local",
+                            localIdentName: "[name]__[local]___[hash:base64:5]",
+                            exportOnlyLocals: true,
                         },
-                        onlyLocals: true,
-                    }
-                }],
+                    },
+                }, ],
                 exclude: GLOBALC_CSS_REGEXP
             },
             {
