@@ -29,7 +29,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "../dist/client"),
         filename: "client.js",
-        publicPath: "./static/"
+        publicPath: "/static/"
     },
 
     module: {

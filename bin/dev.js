@@ -7,6 +7,7 @@ const webpackHotMiddleware = require("webpack-hot-middleware");
 const express = require("express");
 
 const hmrServer = express();
+
 const clientCpmpiler = webpack(webpackClientConfig);
 
 hmrServer.use(webpackDevMiddleware(clientCpmpiler, {
@@ -27,6 +28,8 @@ hmrServer.use(webpackHotMiddleware(clientCpmpiler, {
 hmrServer.listen(3001, () => {
     console.log("HMR server succesfuly started");
 });
+
+// -----------------------------------------
 
 const compiler = webpack(webpackServerConfig);
 
