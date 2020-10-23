@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './layout.css';
 
-interface ILayputProps {
+interface ILayoutProps {
   children?: React.ReactNode;
 }
 
-export function Layout({children}: ILayputProps) {
+export function Layout({children}: ILayoutProps) {
   return (
     <div className={styles.layout}>
       {children}

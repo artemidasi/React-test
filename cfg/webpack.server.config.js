@@ -1,7 +1,6 @@
 const path = require("path");
 //Убирает другие зависимости
 const nodeExternals = require("webpack-node-externals");
-const { triggerAsyncId } = require("async_hooks");
 
 const NODE_ENV = process.env.NODE_ENV;
 const GLOBALC_CSS_REGEXP = /\.global\.css$/
