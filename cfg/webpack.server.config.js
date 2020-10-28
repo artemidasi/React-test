@@ -37,7 +37,7 @@ module.exports = {
                             exportOnlyLocals: true,
                         },
                     },
-                }, ],
+                }],
                 exclude: GLOBALC_CSS_REGEXP
             },
             {

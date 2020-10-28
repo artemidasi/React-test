@@ -10,7 +10,7 @@ function AppComponent() {
         <Layout>
           <Header />
           <Content>
-            content
+            Мое имя
           </Content>
         </Layout>
     );
