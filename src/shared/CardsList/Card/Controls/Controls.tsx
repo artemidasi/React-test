@@ -6,6 +6,8 @@ import { Actions } from './Actions';
 export function Controls() {
   return (
     <div className={styles.controls}>
+      {/* Выношу этот элемент отдельно, так как в нем есть интерактивные элементы - кнопки. Вынос
+      этого элоемента отдельно поможет лучше его контралировать и задавать стили */}
       <KarmaCounter />
 
       <button className={styles.commentsButton}>
@@ -14,7 +16,8 @@ export function Controls() {
         </svg>
         <span className={styles.commentsNumber}>13</span>
       </button>
-
+      {/* В этом элементе так же присутсвуют кнопки, управление которыми будет легче осуществлять
+      через отдельный элемент */}
       <Actions />
     </div>
   );
