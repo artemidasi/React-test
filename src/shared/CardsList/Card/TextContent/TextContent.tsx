@@ -9,7 +9,7 @@ export function TextContent() {
         <div className={styles.userLink}>
           <img
             className={styles.avatar}
-            src=""
+            src="#"
             alt="avatar"
           />
           <a href="#user-url" className={styles.username}>Дмитрий Гришин</a>
