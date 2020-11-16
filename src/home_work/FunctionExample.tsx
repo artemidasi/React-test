@@ -1,14 +1,13 @@
 import React from "react";
 
 add(1)(1);
-
 function add(leftSide: number) {
   return (rightSide: number) => leftSide + rightSide;
 }
-
 const addOne = add(1);
-
 addOne(5);
+
+// Пример 2
 
 const withIdKey = withKey("id");
 
@@ -59,7 +58,7 @@ function pickFromSyntheticEvent <T extends HTMLElement>() {
 export const getValue = pickFromSyntheticEvent<HTMLInputElement>()('value');
 export const getCkecked = pickFromSyntheticEvent<HTMLInputElement>()('checked');
 
-//
+// Еще один пример
 
 function NotStandartLink (props: any) {
   return (
