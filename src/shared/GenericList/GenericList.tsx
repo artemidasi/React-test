@@ -5,7 +5,7 @@ import styles from "./genericlist.css";
 interface IItem {
   text: string;
   id: string;
-  onClick?: (id: string) => void;
+  onclick: (id: string) => void;
   className?: string;
   As?: "a" | "li" | "button" | "div";
   href?: string;
@@ -30,8 +30,8 @@ export function MyList({list}: IMyListProps) {
 export function GenericList({ list }: IMyListProps) {
   return (
     <>
-      {list.map(({ As = "div", text, onClick = console.log, className, id, href}) => {
-        <As className={className} onClick={() => onClick(id)} key={id} href={href}>
+      {list.map(({ As = "div", text, onclick = console.log, className, id, href}) => {
+        <As className={className} onClick={() => onclick(id)} key={id} href={href}>
           {text}
         </As>;
       })}
