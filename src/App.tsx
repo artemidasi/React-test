@@ -6,14 +6,16 @@ import { Content } from "./shared/Content";
 import { Layout } from "./shared/Layout";
 import { CardsList } from "./shared/CardsList";
 import { GenericList, MyList } from "./shared/GenericList";
-import { generateId, generateRandomString } from "./utilits/react/generateRandomIndex";
+import { generateId, generateRandomString} from "./utilits/react/generateRandomIndex";
 import { merge } from "./utilits/js/merge";
 
 const LIST = [
-  { As: 'li' as const, text: "some" }, 
-  { As: 'li' as const, text: "over some" }, 
-  { As: 'li' as const, text: "some" }
+  { As: "li" as const, text: "some" },
+  { As: "li" as const, text: "over some" },
+  { As: "li" as const, text: "some" },
 ].map(generateId);
+
+console.log(LIST);
 
 function AppComponent() {
   const [list, setList] = React.useState(LIST);
@@ -33,7 +35,9 @@ function AppComponent() {
       <Content>
         <CardsList />
         <button onClick={handleAdd}>Add Element</button>
-        <GenericList list={list.map(merge({onclick: handleItemCLick}))} />
+        <ul>
+          <GenericList list={list.map(merge({ onClick: handleItemCLick }))} />
+        </ul>
       </Content>
     </Layout>
   );
