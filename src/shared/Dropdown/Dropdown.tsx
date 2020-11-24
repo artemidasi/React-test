@@ -30,8 +30,6 @@ export function Dropdown({
     }
   };
 
-  // () => setIsDropdownOpen(false);
-
   return (
     <div className={styles.container}>
       <div onClick={handleOpen}>{button}</div>
