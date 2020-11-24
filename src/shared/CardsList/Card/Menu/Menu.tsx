@@ -134,7 +134,11 @@ export function Menu() {
         onOpen={NOOP}
         button={
           <button
-            className={classTest ? styles.menuButton_active : styles.menuButton}
+            className={
+              classTest
+                ? `${styles.menuButton} ${styles.menuButton_active}`
+                : styles.menuButton
+            }
             onClick={() => setClass(!classTest)}
           >
             <svg
