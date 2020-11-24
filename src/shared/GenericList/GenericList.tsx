@@ -2,8 +2,14 @@ import React from "react";
 import { keys } from "../../../webpack.config";
 import styles from "./genericlist.css";
 
+interface HTMLElement {
+  [key: string]: any
+}
+
 interface IItem {
   text: string;
+  picture?: string;
+  content?: HTMLElement;
   id: string;
   onClick: (id: string) => void;
   className?: string;
@@ -20,7 +26,7 @@ export function MyList({list}: IMyListProps) {
     <ul>
       {list.map((item: any, index: number) => {
         <li onClick={() => item.onClick(item.id)} key={item.id}>
-          {item.text}
+          {}{item.text}
         </li>
       })}
     </ul>
@@ -34,11 +40,19 @@ interface IGenericListProps {
 export function GenericList({ list }: IGenericListProps) {
   return (
     <>
-      {list.map(({ As = "div", text, onClick , className, id, href}) => (
-        <As className={className} onClick={() => onClick(id)} key={id} href={href}>
-          {text}
-        </As>
-      ))}
+      {list.map(
+        ({ As = "div", text, onClick, className, id, href, content }) => (
+          <As
+            className={className}
+            onClick={() => onClick(id)}
+            key={id}
+            href={href}
+          >
+            {content}
+            {text}
+          </As>
+        )
+      )}
     </>
   );
 }

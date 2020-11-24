@@ -43,3 +43,15 @@ button {
     background: transparent;
     cursor: pointer;
 }
+
+.list__item {
+    display: flex;
+    margin: 0 20px;
+    padding: 12px;
+    border-bottom: 1px solid #ECECEC;
+    color: #999999;
+}
+
+.list__item__content {
+    margin-right: 5px;
+}
