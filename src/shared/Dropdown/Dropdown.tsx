@@ -1,8 +1,14 @@
 import React from "react";
 import styles from "./dropdown.css";
+import { pipe } from "../../shared/compose.examples";
+
+interface HTMLElement {
+  [key: string]: any;
+}
 
 interface IDropdownProps {
-  button: React.ReactNode;
+  buttonOpen: React.ReactNode;
+  buttonClose: HTMLElement;
   children: React.ReactNode;
   isOpen?: boolean;
   onOpen?: () => void;
@@ -12,7 +18,8 @@ interface IDropdownProps {
 const NOOP = () => {}
 
 export function Dropdown({
-  button,
+  buttonOpen,
+  buttonClose,
   children,
   isOpen,
   onOpen = NOOP,
@@ -30,16 +37,18 @@ export function Dropdown({
     }
   };
 
+  console.log(buttonClose);
+
+  // buttonClose.addEventListener("click", handleOpen);
+
   return (
     <div className={styles.container}>
-      <div onClick={handleOpen}>{button}</div>
+      <div onClick={handleOpen}>{buttonOpen}</div>
       {isDropdownOpen && (
         <div className={styles.listContainer}>
           <ul onClick={NOOP} className={styles.list}>
             {children}
-            <button onClick={handleOpen} className={styles.list__buttonClose}>
-              Закрыть
-            </button>
+            <div onClick={handleOpen}>{buttonClose}</div>
           </ul>
         </div>
       )}

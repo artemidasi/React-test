@@ -12,12 +12,12 @@ function InputExample({ value, onChange}: any) {
     );
 }
 
-function compose<U>(...fns: Function[]) {
+export function compose<U>(...fns: Function[]) {
     return <E,>(initialValue: any): U =>
       fns.reduceRight((previusValue, fn) => fn(previusValue), initialValue);
 }
 
-function pipe<U>(...fns: Function[]) {
+export function pipe<U>(...fns: Function[]) {
     return <E,>(initialValue: any): U => fns.reduce((previusValue, fn) => fn(previusValue), initialValue);
 }
 

@@ -5,7 +5,6 @@ import { GenericList } from "../../../GenericList";
 import { generateId } from "../../../../utilits/react/generateRandomIndex";
 import { merge } from "../../../../utilits/js/merge";
 
-
 const LIST = [
   {
     As: "li" as const,
@@ -115,24 +114,12 @@ export function Menu() {
     const [list, setList] = React.useState(LIST);
     const [classTest, setClass] = React.useState(false);
 
-    // const handleItemCLick = (id: string) => {
-    //   setList(list.filter((item: any) => item.id != id));
-    // };
-
-    // const handleAdd = () => {
-    //   setList(
-    //     list.concat(
-    //       generateId({ text: generateRandomString(), As: "div" as const })
-    //     )
-    //   );
-    // };
-
   return (
     <div className={styles.menu}>
       <Dropdown
         onClose={NOOP}
         onOpen={NOOP}
-        button={
+        buttonOpen={
           <button
             className={
               classTest
@@ -152,6 +139,14 @@ export function Menu() {
               <circle cx="2.5" cy="10" r="2.5" fill="#D9D9D9" />
               <circle cx="2.5" cy="17.5" r="2.5" fill="#D9D9D9" />
             </svg>
+          </button>
+        }
+        buttonClose={
+          <button
+            className={styles.list__buttonClose}
+            onClick={() => setClass(!classTest)}
+          >
+            Закрыть
           </button>
         }
       >
