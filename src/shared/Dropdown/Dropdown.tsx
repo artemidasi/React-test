@@ -2,13 +2,10 @@ import React from "react";
 import styles from "./dropdown.css";
 import { pipe } from "../../shared/compose.examples";
 
-interface HTMLElement {
-  [key: string]: any;
-}
 
 interface IDropdownProps {
   buttonOpen: React.ReactNode;
-  buttonClose: HTMLElement;
+  buttonClose: React.ReactNode;
   children: React.ReactNode;
   isOpen?: boolean;
   onOpen?: () => void;
@@ -36,10 +33,6 @@ export function Dropdown({
       setIsDropdownOpen(!isDropdownOpen);
     }
   };
-
-  console.log(buttonClose);
-
-  // buttonClose.addEventListener("click", handleOpen);
 
   return (
     <div className={styles.container}>
