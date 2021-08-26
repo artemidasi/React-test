@@ -26,7 +26,7 @@ export function MyList({list}: IMyListProps) {
     <ul>
       {list.map((item: any, index: number) => {
         <li onClick={() => item.onClick(item.id)} key={item.id}>
-          {}{item.text}
+          {item.text}
         </li>
       })}
     </ul>

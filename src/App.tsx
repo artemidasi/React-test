@@ -6,6 +6,7 @@ import { Content } from "./shared/Content";
 import { Layout } from "./shared/Layout";
 import { CardsList } from "./shared/CardsList";
 import { generateId, generateRandomString} from "./utilits/react/generateRandomIndex";
+import { Text } from './shared/Text';
 
 const LIST = [
   { As: "div" as const, text: "some" },
@@ -20,6 +21,10 @@ function AppComponent() {
       <Header />
       <Content>
         <CardsList />
+        <br />
+        <Text size={28}>Label 1</Text>
+        <Text size={20}>Label 2</Text>
+        <Text size={14}>Label 3</Text>
       </Content>
     </Layout>
   );
