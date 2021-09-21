@@ -119,7 +119,7 @@ export function Menu() {
     <div className={styles.menu}>
       <Dropdown
         onClose={NOOP}
-        onOpen={NOOP}
+        onOpen={NOOP} 
         buttonOpen={
           <button
             className={

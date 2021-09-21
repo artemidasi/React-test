@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    flex: 1 1 0%;
+    flex : 1 1 0%;
 }
 
 .listContainer {
@@ -8,13 +8,20 @@
 }
 
 .list {
-    position: absolute;
-    left: -60px;
-    top: 25px;
-    padding-top: 10px;
-    box-shadow: 0 0 5px black;
+    position        : absolute;
+    left            : -60px;
+    top             : 25px;
+    padding-top     : 10px;
+    box-shadow      : 0 0 5px black;
     background-color: #FFFFFF;
-    font-size: 14px;
-    line-height: 17px;
-    border-radius: 3px;
+    font-size       : 14px;
+    line-height     : 17px;
+    border-radius   : 3px;
+}
+
+@media all and (max-width : 1024px) {
+    .list {
+        top : 15px;
+        left: -120px;
+    }
 }
