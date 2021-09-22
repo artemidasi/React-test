@@ -1,0 +1,7 @@
+.User-link {
+  cursor: pointer;
+}
+
+.User-link:hover {
+  outline: 2px solid orange;
+}
