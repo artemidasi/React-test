@@ -1,5 +1,10 @@
-@media all and (min-width: 1024px) {
-    .cardsList {
-        padding: 40px 0;
-    }
+.cardsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.other {
+    text-align: center;
 }

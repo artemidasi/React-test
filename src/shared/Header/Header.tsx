@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './header.css';
-import {SearchBlock} from './SearchBlock'
+import { SearchBlock } from './SearchBlock'
 import { TreadTitle } from './TreadTitle';
 import { SortBlock } from './SortBlock';
 
-export function Header() {
+export const Header: React.FC = () => {
+
   return (
     <header className={styles.header}>
       <SearchBlock />

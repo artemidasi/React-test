@@ -53,7 +53,9 @@
     },
     "dependencies": {
         "@hot-loader/react-dom": "^17.0.0-rc.2",
+        "axios": "^0.25.0",
         "classnames": "^2.3.1",
+        "moment": "^2.29.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "sass": "^1.42.0",

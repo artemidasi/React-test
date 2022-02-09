@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './userblock.css';
 import { IconAnon } from "../../../icons";
+import { MAIN_URL_REDDIT, fetchURL} from '../../../../const/const';
 
 interface IUserBlockProps {
   avatarSrc?: string;
@@ -16,10 +17,10 @@ const authParams = {
   scope: "read submit identity"
 }
 
-export function UserBlock({ avatarSrc, username }: IUserBlockProps) {
+export const UserBlock: React.FC<IUserBlockProps> = ({ avatarSrc, username }) => {
   return (
     <a
-      href={`https://www.reddit.com/api/v1/authorize?client_id=${process.env.CLIENT_ID}&response_type=${authParams.response_type}&state=${authParams.state}&redirect_uri=${authParams.redirect_uri}&duration=${authParams.duration}&scope=${authParams.scope}`}
+      href={`${fetchURL.authorize}?client_id=${process.env.CLIENT_ID}&response_type=${authParams.response_type}&state=${authParams.state}&redirect_uri=${authParams.redirect_uri}&duration=${authParams.duration}&scope=${authParams.scope}`}
       className={styles["User-link"]}
     >
       <div>

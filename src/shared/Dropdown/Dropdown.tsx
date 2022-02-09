@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "./dropdown.css";
 import { pipe } from "../../shared/compose.examples";
 
@@ -14,19 +14,19 @@ interface IDropdownProps {
 
 const NOOP = () => {}
 
-export function Dropdown({
+export const Dropdown =({
   buttonOpen,
   buttonClose,
   children,
   isOpen,
   onOpen = NOOP,
   onClose = NOOP,
-}: IDropdownProps) {
+}: IDropdownProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(isOpen);
 
-  React.useEffect(() => setIsDropdownOpen(isOpen), [isOpen]);
+  useEffect(() => setIsDropdownOpen(isOpen), [isOpen]);
 
-  React.useEffect(() => isDropdownOpen ? onOpen() : onClose(), [isDropdownOpen]);
+  useEffect(() => isDropdownOpen ? onOpen() : onClose(), [isDropdownOpen]);
 
   const handleOpen = () => {
     if (isOpen === undefined) {
